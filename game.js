@@ -61,7 +61,7 @@ class Game {
 
 
   _move() {
-    this.pelota.move()
+    setTimeout(() => {this.pelota.move()}, 2000)
     this.rectanguloDer.move();
     this.rectanguloIzq.move();
 
