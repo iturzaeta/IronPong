@@ -18,7 +18,7 @@ class Rectangulo {
   }
 
   move() {
-    if(this.y + this.vy + this.h < 300 && this.y + this.vy > 0) {
+    if(this.y + this.vy + this.h < this.ctx.canvas.height && this.y + this.vy > 0) {
       this.y += this.vy
     }
   }
