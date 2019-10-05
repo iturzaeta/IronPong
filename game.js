@@ -24,8 +24,8 @@ class Game {
 
     this._setListeners();
 
-    this.scoreLeft = 0
-    this.scoreRight = 0
+    this.scoreLeft = 10
+    this.scoreRight = 10
 
   }
 
@@ -38,21 +38,24 @@ class Game {
         return
       }
 
-
+      
       this._clear()
       this._draw()
       this._moveRectangulos()
-
+      this.gameOver();
+      
       if (newRound === true) {
         this.startNewRound()
-        
         return
       }
 
+      
       this._move()
       this._checkCollisions();
+      
     
     }, 1000 / 60)
+    
   }
 
 
@@ -127,6 +130,38 @@ class Game {
     this.ctx.fillText("PAUSE", this.ctx.canvas.width/2, this.ctx.canvas.height/2 );
   }
 
+  printMatchPoint() {
+    this.ctx.font = "30px Arial";
+    this.ctx.fillStyle = "black";
+    this.ctx.textAlign = "center"
+    this.ctx.fillText("MATCH POINT", this.ctx.canvas.width/2, this.ctx.canvas.height/2 );
+  }
+
+  printRightPlayerWins () {
+    this.ctx.font = "30px Arial";
+    this.ctx.fillStyle = "red";
+    this.ctx.textAlign = "center"
+    this.ctx.fillText("RIGHT PLAYER WINS", this.ctx.canvas.width/2, this.ctx.canvas.height/2 );
+  }
+
+  printLeftPlayerWins () {
+    this.ctx.font = "30px Arial";
+    this.ctx.fillStyle = "red";
+    this.ctx.textAlign = "center"
+    this.ctx.fillText("LEFT PLAYER WINS", this.ctx.canvas.width/2, this.ctx.canvas.height/2 );
+  }
+
+  gameOver() {
+    //if scoreLeft or ScoreRight === 11-------->hacer como en pausa y start.disabled = false; innerHTML del boton = restart
+    if (this.scoreLeft === 11) {
+      clearInterval(this.intervalId);
+      this.printRightPlayerWins()
+    } else if (this.scoreRight === 11) {
+      clearInterval(this.intervalId);
+      this.printLeftPlayerWins();
+    }
+  }
+
   startNewRound () {
     this.pelota = new Pelota(this.ctx)
   }
@@ -146,7 +181,6 @@ class Game {
         //this.vy = 5
         this.rectanguloIzq.aumentarVelocidad(5);
       } else if (e.keyCode===PAUSA) {
-        console.log(pause)
         pause = !pause
       }
     }
