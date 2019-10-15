@@ -225,19 +225,19 @@ class Game {
     document.onkeydown = (e) => {
       if (e.keyCode === TOP_KEY) {
         
-        this.rectanguloDer.aumentarVelocidad(-7.3);
+        this.rectanguloDer.aumentarVelocidad(-7.5);
 
       } else if (e.keyCode === DOWN_KEY) {
         
-        this.rectanguloDer.aumentarVelocidad(7.3);
+        this.rectanguloDer.aumentarVelocidad(7.5);
 
       } else if (e.keyCode === W_KEY) {
         
-        this.rectanguloIzq.aumentarVelocidad(-7.3);
+        this.rectanguloIzq.aumentarVelocidad(-7.5);
 
       } else if (e.keyCode === S_KEY) {
         
-        this.rectanguloIzq.aumentarVelocidad(7.3);
+        this.rectanguloIzq.aumentarVelocidad(7.5);
 
       } else if (e.keyCode===PAUSA) {
         pause = !pause
