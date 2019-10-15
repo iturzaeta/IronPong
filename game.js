@@ -24,14 +24,14 @@ class Game {
     this.scoreLeft = 0
     this.scoreRight = 0
 
-    this.colideAudio = new Audio("/Users/gios/Desktop/Pong/audio/collide.mp3")     
-    this.pauseAudio = new Audio("/Users/gios/Desktop/Pong/audio/pause.mp3")  
-    this.player2WinsAudio = new Audio("/Users/gios/Desktop/Pong/audio/player2wins.mp3")
-    this.player1WinsAudio = new Audio("/Users/gios/Desktop/Pong/audio/player1wins.mp3")
-    this.collideWallsAudio = new Audio("/Users/gios/Desktop/Pong/audio/collideWalls.mp3")
-    this.gameplay = new Audio("/Users/gios/Desktop/Pong/audio/gameplay.mp3")
-    this.intro = new Audio("/Users/gios/Desktop/Pong/audio/intro.mp3")
-    this.applause = new Audio("/Users/gios/Desktop/Pong/audio/applause.wav")
+    this.colideAudio = new Audio("./audio/collide.mp3")     
+    this.pauseAudio = new Audio("./audio/pause.mp3")  
+    this.player2WinsAudio = new Audio("./audio/player2wins.mp3")
+    this.player1WinsAudio = new Audio("./audio/player1wins.mp3")
+    this.collideWallsAudio = new Audio("./audio/collideWalls.mp3")
+    this.gameplay = new Audio("./audio/gameplay.mp3")
+    this.intro = new Audio("./audio/intro.mp3")
+    this.applause = new Audio("./audio/applause.wav")
   }
 
 
