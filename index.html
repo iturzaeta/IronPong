@@ -1,20 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>IronPong</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+  
 </head>
+
 <body>
-  <div id="canvas">
-    <canvas id="my-canvas" width="800" height="500"/>
-  </div>
   
-  <div>
-    <button>Start</button>
+  <div id="menu">
+    <div class="titulo">
+        <div id="pong-text">
+            <h1 id="main-title">
+                IRON - PONG
+              </h1>
+        </div>
+        
+    </div>
+    <div class="controles">
+      <div class="players">
+        <h2>PLAYER 1</h2>
+        <h3>W</h3>
+        <h3>S</h3>
+      </div>
+      <div class="selectors">
+          <button id="start" class="btn">
+            <span>Start</span>
+          </button>
+          <div id="input">
+            <label for="speed"><h3>Fast</h3></label>
+             <input id="speed" type="range" min="10" max="16">
+            <label for="speed"><h3>Slow</h3></label>
+          </div>
+          
+      </div>
+      <div class="players">
+          <h2>PLAYER 2</h2>
+          <h3>▲</h3>
+          <h3>▼</h3>
+        </div>
+      </div>
+    <div class="instrucciones">
+      <span>The first player to reach 10 points wins.</span><br/>
+      <span>But if the score reaches 9-9, the winner is the first player to win two points in a row.</span>
+    </div>
   </div>
-  
+
+
+  <div id="juego">
+    <h1 id="title">
+      IRON - PONG
+    </h1>
+    <div id="canvas">
+      <canvas id="my-canvas" width="900" height="500" />
+    </div>
+    <button id="replay" class="btn">
+      <span>Replay</span>
+    </button>
+  </div>
+
+
+
   <script src="background.js"></script>
   <script src="pelota.js"></script>
   <script src="rectangulo.js"></script>
@@ -22,4 +73,5 @@
   <script src="script.js"></script>
 
 </body>
+
 </html>

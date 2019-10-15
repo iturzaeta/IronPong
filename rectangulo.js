@@ -8,11 +8,12 @@ class Rectangulo {
     this.h = 60
     
     this.vy = 0;
-
+    
   }
 
   draw() {
     this.ctx.beginPath();
+    this.ctx.fillStyle = canvas.style.borderColor
     this.ctx.fillRect(this.x, this.y, this.w, this.h);
     this.ctx.closePath()
   }
@@ -26,6 +27,4 @@ class Rectangulo {
   aumentarVelocidad(velocidad){
     this.vy = velocidad;
   }
-
-
 }
